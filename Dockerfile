@@ -1,11 +1,19 @@
-FROM node:22.12.0-slim
+FROM node:22.12.0
 
 WORKDIR /app
+
+# Install system dependencies that OpenClaw might need
+RUN apt-get update && apt-get install -y \
+    python3 \
+    make \
+    g++ \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy package files
 COPY package.json ./
 
-# Install dependencies and OpenClaw
+# Install OpenClaw globally
 RUN npm install -g openclaw@latest
 
 # Copy configuration files
@@ -13,8 +21,8 @@ COPY config ./config
 COPY agents ./agents  
 COPY workers ./workers
 
-# Expose port
-EXPOSE $PORT
+# Expose port (Railway handles this dynamically)
+EXPOSE 8080
 
 # Start OpenClaw gateway
-CMD ["openclaw", "gateway", "--allow-unconfigured", "--bind", "0.0.0.0", "--port", "$PORT"]
+CMD openclaw gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT
