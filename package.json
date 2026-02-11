@@ -1,0 +1,15 @@
+{
+  "name": "hey-neighbor-openclaw",
+  "version": "1.0.0",
+  "description": "Hey Neighbor podcast outreach automation via OpenClaw",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install -g openclaw@latest && openclaw gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT"
+  },
+  "dependencies": {
+    "openclaw": "latest"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
