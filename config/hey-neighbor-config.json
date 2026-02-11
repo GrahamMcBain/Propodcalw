@@ -52,7 +52,8 @@
       "enabled": true,
       "token": "${TELEGRAM_BOT_TOKEN}",
       "allowlist": ["@GrahamMcBain"],
-      "description": "Hey Neighbor Campaign Manager"
+      "description": "Hey Neighbor Campaign Manager",
+      "autoEnable": true
     }
   }
 }

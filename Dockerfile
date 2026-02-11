@@ -24,5 +24,5 @@ COPY workers ./workers
 # Expose port (Railway handles this dynamically)
 EXPOSE 8080
 
-# Start OpenClaw gateway
-CMD openclaw gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT
+# Start OpenClaw gateway  
+CMD openclaw gateway --allow-unconfigured --bind lan --port $PORT
