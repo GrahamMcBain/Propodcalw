@@ -2,7 +2,7 @@
   "gateway": {
     "bind": "0.0.0.0",
     "port": 18789,
-    "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    "token": "${env:OPENCLAW_GATEWAY_TOKEN}"
   },
   "agents": {
     "defaults": {
@@ -19,15 +19,15 @@
   },
   "providers": {
     "anthropic": {
-      "apiKey": "${ANTHROPIC_API_KEY}",
+      "apiKey": "${env:ANTHROPIC_API_KEY}",
       "baseUrl": "https://api.anthropic.com"
     }
   },
   "email": {
     "provider": "gmail",
-    "user": "${GMAIL_USER}",
-    "password": "${GMAIL_APP_PASSWORD}",
-    "fromEmail": "${GMAIL_USER}",
+    "user": "${env:GMAIL_USER}",
+    "password": "${env:GMAIL_APP_PASSWORD}",
+    "fromEmail": "${env:GMAIL_USER}",
     "fromName": "Graham McBain - Hey Neighbor"
   },
   "campaigns": {
@@ -40,7 +40,7 @@
     "web_search": {
       "enabled": true,
       "provider": "serpapi",
-      "apiKey": "${SERPAPI_KEY}"
+      "apiKey": "${env:SERPAPI_KEY}"
     },
     "email_sender": {
       "enabled": true,
@@ -50,7 +50,7 @@
   "channels": {
     "telegram": {
       "enabled": true,
-      "token": "${TELEGRAM_BOT_TOKEN}",
+      "token": "${env:TELEGRAM_BOT_TOKEN}",
       "allowlist": ["@GrahamMcBain"],
       "description": "Hey Neighbor Campaign Manager",
       "autoEnable": true
