@@ -4,9 +4,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "npm install -g openclaw@latest && openclaw gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT",
-    "healthcheckPath": "/healthz", 
-    "healthcheckTimeout": 300,
-    "restartPolicyType": "ALWAYS"
+    "startCommand": "npm install -g openclaw@latest && openclaw gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT"
   }
 }
