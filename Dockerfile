@@ -24,5 +24,6 @@ COPY workers ./workers
 # Expose port (Railway handles this dynamically)
 EXPOSE 8080
 
-# Start OpenClaw gateway with our config
-CMD openclaw gateway --config /app/config/hey-neighbor-config.json --bind lan --port $PORT
+# Start OpenClaw gateway with our config via environment variable
+ENV OPENCLAW_CONFIG_PATH=/app/config/hey-neighbor-config.json
+CMD openclaw gateway --bind lan --port $PORT
