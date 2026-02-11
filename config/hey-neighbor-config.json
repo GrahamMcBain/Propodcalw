@@ -1,0 +1,58 @@
+{
+  "gateway": {
+    "bind": "0.0.0.0",
+    "port": 18789,
+    "token": "${OPENCLAW_GATEWAY_TOKEN}"
+  },
+  "agents": {
+    "defaults": {
+      "model": "claude-3-5-sonnet-20241022",
+      "provider": "anthropic",
+      "temperature": 0.7,
+      "maxTokens": 2000,
+      "sandbox": {
+        "mode": "non-main",
+        "scope": "agent",
+        "workspaceAccess": "rw"
+      }
+    }
+  },
+  "providers": {
+    "anthropic": {
+      "apiKey": "${ANTHROPIC_API_KEY}",
+      "baseUrl": "https://api.anthropic.com"
+    }
+  },
+  "email": {
+    "provider": "gmail",
+    "user": "${GMAIL_USER}",
+    "password": "${GMAIL_APP_PASSWORD}",
+    "fromEmail": "${GMAIL_USER}",
+    "fromName": "Graham McBain - Hey Neighbor"
+  },
+  "campaigns": {
+    "defaultTemplate": "podcast-guest",
+    "followUpDelay": 7,
+    "maxFollowUps": 2,
+    "dailyLimit": 50
+  },
+  "tools": {
+    "web_search": {
+      "enabled": true,
+      "provider": "serpapi",
+      "apiKey": "${SERPAPI_KEY}"
+    },
+    "email_sender": {
+      "enabled": true,
+      "rateLimit": 10
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "token": "${TELEGRAM_BOT_TOKEN}",
+      "allowlist": ["@GrahamMcBain"],
+      "description": "Hey Neighbor Campaign Manager"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "Dockerfile"
+  },
+  "deploy": {
+    "startCommand": "node openclaw.mjs gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT --config-path /app/config/hey-neighbor-config.json",
+    "healthcheckPath": "/healthz",
+    "healthcheckTimeout": 300,
+    "restartPolicyType": "ALWAYS"
+  }
+}
