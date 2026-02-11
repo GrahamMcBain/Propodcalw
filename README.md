@@ -2,7 +2,9 @@
 
 Automated podcast guest outreach powered by OpenClaw AI.
 
-## Status: Ready for Deployment
+## Status: Ready for Deployment 
+
+Updated: Fixed environment variable syntax for Telegram bot activation.
 
 This system automates prospect discovery and personalized email campaigns for podcast guest bookings.
 
