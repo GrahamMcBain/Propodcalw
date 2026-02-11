@@ -4,6 +4,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "npm install -g openclaw@latest && openclaw gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT"
+    "startCommand": "npm install -g openclaw@latest --force --engine-strict=false && openclaw gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT"
   }
 }
